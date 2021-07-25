@@ -1,2 +1,4 @@
-package PACKAGE_NAME;public class ListaDeMoradores {
+public class ListaDeMoradores {
+
+
 }
