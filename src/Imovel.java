@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Imovel {
@@ -5,16 +6,15 @@ public class Imovel {
     private String endereco;
     private double precoAluguel;
     private String funcionario;
-    private List<Morador>moredoresImovel;
+    private static List<Morador>moredoresImovel =new ArrayList<>();
 
     public Imovel() {
     }
 
-    public Imovel( String endereco, double precoAluguel, String funcionario, List<Morador> moredoresImovel) {
+    public Imovel( String endereco, double precoAluguel, String funcionario){
         this.endereco = endereco;
         this.precoAluguel = precoAluguel;
         this.funcionario = funcionario;
-        this.moredoresImovel = moredoresImovel;
     }
 
     public String getEndereco() {
@@ -45,8 +45,23 @@ public class Imovel {
     public List<Morador> getMoredoresImovel() {
         return moredoresImovel;
     }
+    public static void exibirMoradores(){
+        for (Morador morador:moredoresImovel) {
+            System.out.println("nome morador: "+morador.getNome());
+
+        }
+    }
+    public static void adicionarMorador(Morador morador){
+        moredoresImovel.add(morador);
+    }
 
     public void setMoredoresImovel(List<Morador> moredoresImovel) {
         this.moredoresImovel = moredoresImovel;
+    }
+    public void exibirValoresDosImoveis() {
+        System.out.println("Endereco imovel "+ this.endereco);
+        System.out.println("Valor do aluguel é"+this.precoAluguel);
+        System.out.println("Funcionario responsavel pelo imovel"+this.funcionario);
+        this.exibirMoradores();
     }
 }
