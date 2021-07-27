@@ -32,7 +32,7 @@ public class Sistema {
     public static void excluirCadastroPorCpf() throws Exception{
         System.out.println("Digite o cpf do cadastro que você quer exlcuir da lista");
         String cpf = IO.criarvalor().next();
-
+ListaDeImoveis.excluirMoradorPorCpf(cpf);
     }
 
     public static void menu(){

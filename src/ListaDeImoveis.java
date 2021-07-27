@@ -15,4 +15,17 @@ public class ListaDeImoveis {
         imoveis.add(imovel);
     }
 
+    public static void excluirMoradorPorCpf(String cpfMorador){
+        Morador moradorExcluir = new Morador();
+        for (Imovel imovel: imoveis) {
+            for (int index = 0;index <imovel.getMoredoresImovel().size();index++){
+                Morador morador = imovel.getMoredoresImovel().get(index);
+                if (morador.getCpf().equals(cpfMorador)) {
+                    System.out.println("cpf do morador " + moradorExcluir.getCpf());
+                    imovel.getMoredoresImovel().remove(morador);
+                }
+            }
+        }
+        mostrarListaDeImoveis();
+    }
 }
